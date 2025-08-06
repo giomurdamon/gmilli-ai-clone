@@ -6,6 +6,7 @@ import Link from 'next/link';
 
 export default function HomePage() {
   const [showAnalyzer, setShowAnalyzer] = useState(false);
+  // FORCE NETLIFY CACHE BUST - Updated 2025-08-06
 
   return (
     <div className="relative min-h-screen bg-[#0F172A]">

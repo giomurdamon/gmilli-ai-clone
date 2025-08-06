@@ -3,7 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Force version 196 dark theme globally */
+/* Force version 196 dark theme globally - UPDATED FOR NETLIFY CACHE BUST */
 html, body {
   background: linear-gradient(135deg, #0a0e1a 0%, #1a1a2e 50%, #16213e 100%) !important;
   color: white !important;
