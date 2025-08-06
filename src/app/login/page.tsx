@@ -9,8 +9,21 @@ export default function LoginPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle login logic here
+
+    // Basic validation
+    if (!email || !password) {
+      alert('Please enter both email and password');
+      return;
+    }
+
+    // For now, simulate successful login and redirect to dashboard
     console.log('Login attempt:', { email, password });
+
+    // Simulate successful login
+    alert('Login successful! Redirecting to dashboard...');
+
+    // Redirect to dashboard
+    window.location.href = '/dashboard';
   };
 
   return (
@@ -101,16 +114,17 @@ export default function LoginPage() {
             type="submit"
             style={{
               width: '100%',
-              backgroundColor: '#6B7280',
+              backgroundColor: '#0284C7',
               color: 'white',
               padding: '0.75rem',
               borderRadius: '6px',
               border: 'none',
               fontSize: '1rem',
               fontWeight: '600',
-              cursor: 'not-allowed'
+              cursor: 'pointer',
+              transition: 'background-color 0.3s ease'
             }}
-            disabled
+
           >
             🚀 Login
           </button>
