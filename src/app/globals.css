@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Force version 196 dark theme globally */
+html, body {
+  background: linear-gradient(135deg, #0a0e1a 0%, #1a1a2e 50%, #16213e 100%) !important;
+  color: white !important;
+  min-height: 100vh;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    font-family: "Inter", sans-serif;
+    background: linear-gradient(135deg, #0a0e1a 0%, #1a1a2e 50%, #16213e 100%) !important;
+    color: white !important;
+  }
+}
+
+:root {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 180 100% 50%;
+  --primary-foreground: 0 0% 0%;
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --accent: 180 100% 50%;
+  --accent-foreground: 0 0% 0%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 180 50% 30%;
+  --input: 180 50% 20%;
+  --ring: 180 100% 50%;
+  --radius: 0.5rem;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #00bcd4 0%, #00e5ff 50%, #40e0d0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass {
+  background: rgba(26, 58, 58, 0.3);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+}
+
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* DigitAI Stats Panel Styles */
+.digit-stats-panel {
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.digit-stats-panel.active {
+  transform: translateX(0);
+}
+
+/* Adjust main popup when DigitAI is active */
+.analyzer-popup-adjusted {
+  margin-left: 21rem; /* 336px = w-80 + margins */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1536px) {
+  .analyzer-popup-adjusted {
+    margin-left: 20rem;
+  }
+}
+
+@media (max-width: 1280px) {
+  .digit-stats-panel {
+    width: 18rem;
+  }
+  .analyzer-popup-adjusted {
+    margin-left: 18rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .digit-stats-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 16rem;
+    z-index: 70;
+  }
+  .analyzer-popup-adjusted {
+    margin-left: 0;
+    transform: translateX(16rem);
+  }
+}
