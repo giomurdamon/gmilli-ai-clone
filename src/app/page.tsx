@@ -1,11 +1,8 @@
 'use client';
 
-import { useState } from 'react';
-import { AnalyzerPopup } from '@/components/AnalyzerPopup';
 import Link from 'next/link';
 
 export default function HomePage() {
-  const [showAnalyzer, setShowAnalyzer] = useState(false);
   // FORCE NETLIFY CACHE BUST - Updated 2025-08-06
 
   return (
@@ -188,24 +185,25 @@ export default function HomePage() {
                 >
                   Advanced AI-powered trading analysis and automation platform
                 </p>
-                <button
-                  onClick={() => setShowAnalyzer(true)}
-                  className="bg-sky-600 hover:bg-sky-700 text-white px-8 py-3 rounded-lg text-lg transition-all duration-300 hover:scale-105"
-                  style={{
-                    backgroundColor: '#0284C7',
-                    color: 'white',
-                    padding: '12px 32px',
-                    borderRadius: '8px',
-                    border: 'none',
-                    fontSize: '16px',
-                    fontWeight: '600',
-                    transition: 'all 0.3s ease',
-                    cursor: 'pointer',
-                    marginBottom: '60px'
-                  }}
-                >
-                  Get Started
-                </button>
+                <Link href="/analyzer">
+                  <button
+                    className="bg-sky-600 hover:bg-sky-700 text-white px-8 py-3 rounded-lg text-lg transition-all duration-300 hover:scale-105"
+                    style={{
+                      backgroundColor: '#0284C7',
+                      color: 'white',
+                      padding: '12px 32px',
+                      borderRadius: '8px',
+                      border: 'none',
+                      fontSize: '16px',
+                      fontWeight: '600',
+                      transition: 'all 0.3s ease',
+                      cursor: 'pointer',
+                      marginBottom: '60px'
+                    }}
+                  >
+                    Get Started
+                  </button>
+                </Link>
               </section>
 
               {/* Features Section */}
@@ -421,10 +419,6 @@ export default function HomePage() {
         </main>
       </div>
 
-      {/* Analyzer Popup */}
-      {showAnalyzer && (
-        <AnalyzerPopup onClose={() => setShowAnalyzer(false)} />
-      )}
     </div>
   );
 }
