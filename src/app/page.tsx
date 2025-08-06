@@ -44,29 +44,87 @@ export default function HomePage() {
 
       <div className="relative z-10 min-h-screen flex flex-col">
         {/* Navigation */}
-        <nav className="backdrop-blur-xl bg-slate-900/50 border-blue-900/20 border-b transition-colors duration-200">
+        <nav
+          className="backdrop-blur-xl bg-slate-900/50 border-blue-900/20 border-b transition-colors duration-200"
+          style={{
+            backgroundColor: 'rgba(15, 23, 42, 0.8)',
+            backdropFilter: 'blur(16px)',
+            borderBottom: '1px solid rgba(59, 130, 246, 0.1)'
+          }}
+        >
           <div className="container mx-auto px-4">
             <div className="flex items-center justify-between h-16">
               <Link className="flex items-center space-x-2" href="/">
-                <div className="w-8 h-8 bg-sky-500 rounded-lg flex items-center justify-center text-white font-bold">
+                <div
+                  className="w-8 h-8 bg-sky-500 rounded-lg flex items-center justify-center text-white font-bold"
+                  style={{
+                    width: '32px',
+                    height: '32px',
+                    backgroundColor: '#0EA5E9',
+                    borderRadius: '8px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: 'white',
+                    fontWeight: 'bold',
+                    fontSize: '16px'
+                  }}
+                >
                   G
                 </div>
-                <span className="text-xl font-bold bg-gradient-to-r from-sky-400 to-blue-500 text-transparent bg-clip-text">
+                <span
+                  className="text-xl font-bold bg-gradient-to-r from-sky-400 to-blue-500 text-transparent bg-clip-text"
+                  style={{
+                    fontSize: '20px',
+                    fontWeight: 'bold',
+                    background: 'linear-gradient(to right, #38BDF8, #3B82F6)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                    marginLeft: '8px'
+                  }}
+                >
                   Gmilli AI
                 </span>
               </Link>
               <div className="flex items-center space-x-6">
-                <Link className="hover:text-sky-400 transition-colors text-gray-300" href="/">
+                <Link
+                  className="hover:text-sky-400 transition-colors text-gray-300"
+                  href="/"
+                  style={{ color: '#D1D5DB', textDecoration: 'none' }}
+                >
                   Home
                 </Link>
                 <div className="flex items-center space-x-4">
                   <Link href="/login">
-                    <button className="bg-sky-600 hover:bg-sky-700 text-white px-4 py-2 rounded-lg transition-colors">
+                    <button
+                      className="bg-sky-600 hover:bg-sky-700 text-white px-4 py-2 rounded-lg transition-colors"
+                      style={{
+                        backgroundColor: '#0284C7',
+                        color: 'white',
+                        padding: '8px 16px',
+                        borderRadius: '6px',
+                        border: 'none',
+                        fontWeight: '500',
+                        cursor: 'pointer'
+                      }}
+                    >
                       Login
                     </button>
                   </Link>
                   <Link href="/signup">
-                    <button className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors">
+                    <button
+                      className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors"
+                      style={{
+                        backgroundColor: '#059669',
+                        color: 'white',
+                        padding: '8px 16px',
+                        borderRadius: '6px',
+                        border: 'none',
+                        fontWeight: '500',
+                        cursor: 'pointer'
+                      }}
+                    >
                       Sign Up
                     </button>
                   </Link>
@@ -78,26 +136,56 @@ export default function HomePage() {
 
         {/* Main Content */}
         <main className="flex-1 w-full">
-          <div className="min-h-screen">
-            <div className="container mx-auto px-4 py-12">
+          <div
+            className="min-h-screen"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              paddingTop: '80px'
+            }}
+          >
+            <div
+              className="container mx-auto px-4"
+              style={{
+                maxWidth: '1200px',
+                width: '100%',
+                textAlign: 'center'
+              }}
+            >
               {/* Hero Section */}
-              <section className="text-center mb-16">
+              <section
+                className="text-center mb-16"
+                style={{
+                  textAlign: 'center',
+                  marginBottom: '80px'
+                }}
+              >
                 <h1
                   className="text-4xl sm:text-5xl font-bold mb-6 bg-gradient-to-r from-sky-400 to-blue-500 text-transparent bg-clip-text"
                   style={{
-                    fontSize: 'clamp(2.5rem, 5vw, 3rem)',
+                    fontSize: '48px',
                     fontWeight: 'bold',
-                    marginBottom: '24px',
+                    marginBottom: '16px',
                     background: 'linear-gradient(to right, #38BDF8, #3B82F6)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
                     backgroundClip: 'text',
-                    textAlign: 'center'
+                    textAlign: 'center',
+                    lineHeight: '1.2'
                   }}
                 >
                   Gmilli AI Trading Assistant
                 </h1>
-                <p className="text-xl text-gray-300 mb-8">
+                <p
+                  className="text-xl text-gray-300 mb-8"
+                  style={{
+                    fontSize: '18px',
+                    color: '#D1D5DB',
+                    marginBottom: '32px',
+                    textAlign: 'center'
+                  }}
+                >
                   Advanced AI-powered trading analysis and automation platform
                 </p>
                 <button
@@ -109,10 +197,11 @@ export default function HomePage() {
                     padding: '12px 32px',
                     borderRadius: '8px',
                     border: 'none',
-                    fontSize: '18px',
+                    fontSize: '16px',
                     fontWeight: '600',
                     transition: 'all 0.3s ease',
-                    cursor: 'pointer'
+                    cursor: 'pointer',
+                    marginBottom: '60px'
                   }}
                 >
                   Get Started
@@ -120,8 +209,22 @@ export default function HomePage() {
               </section>
 
               {/* Features Section */}
-              <section className="mb-16">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <section
+                className="mb-16"
+                style={{
+                  marginBottom: '80px'
+                }}
+              >
+                <div
+                  className="grid grid-cols-1 md:grid-cols-3 gap-8"
+                  style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(3, 1fr)',
+                    gap: '32px',
+                    maxWidth: '1000px',
+                    margin: '0 auto'
+                  }}
+                >
                   <div
                     className="backdrop-blur-xl bg-slate-800/50 border border-slate-700 rounded-2xl p-6 hover:scale-105 transition-transform duration-300"
                     style={{
@@ -227,7 +330,13 @@ export default function HomePage() {
               </section>
 
               {/* CTA Section */}
-              <section className="text-center">
+              <section
+                className="text-center"
+                style={{
+                  textAlign: 'center',
+                  marginTop: '60px'
+                }}
+              >
                 <div
                   className="backdrop-blur-xl bg-slate-800/50 border border-slate-700 rounded-2xl p-8 max-w-2xl mx-auto"
                   style={{
@@ -235,16 +344,41 @@ export default function HomePage() {
                     backdropFilter: 'blur(16px)',
                     border: '1px solid rgba(51, 65, 85, 0.3)',
                     borderRadius: '16px',
-                    padding: '32px',
-                    maxWidth: '672px',
+                    padding: '40px',
+                    maxWidth: '600px',
                     margin: '0 auto'
                   }}
                 >
-                  <h2 className="text-3xl font-bold text-white mb-4">Ready to Start Trading?</h2>
-                  <p className="text-gray-300 mb-6">
+                  <h2
+                    className="text-3xl font-bold text-white mb-4"
+                    style={{
+                      fontSize: '32px',
+                      fontWeight: 'bold',
+                      color: 'white',
+                      marginBottom: '16px'
+                    }}
+                  >
+                    Ready to Start Trading?
+                  </h2>
+                  <p
+                    className="text-gray-300 mb-6"
+                    style={{
+                      fontSize: '16px',
+                      color: '#D1D5DB',
+                      marginBottom: '32px'
+                    }}
+                  >
                     Join thousands of traders using AI-powered insights to maximize their profits.
                   </p>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <div
+                    className="flex flex-col sm:flex-row gap-4 justify-center"
+                    style={{
+                      display: 'flex',
+                      gap: '16px',
+                      justifyContent: 'center',
+                      alignItems: 'center'
+                    }}
+                  >
                     <Link href="/signup">
                       <button
                         className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg transition-all duration-300 hover:scale-105"
